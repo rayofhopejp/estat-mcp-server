@@ -145,7 +145,7 @@ async def get_specific_e_stat_data(
         str: The response text from the E-Stat API.
     """
     url = (
-        f"{E_STAT_API_BASE_URL}getStatsData?appId={E_STAT_APP_ID}"
+        f"{E_STAT_API_BASE_URL}getSimpleStatsData?appId={E_STAT_APP_ID}"
         f"&startPosition={startPosition}&limit={limit}"
     )
     if data_set_id and not stats_data_id:
