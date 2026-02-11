@@ -82,7 +82,7 @@ async def search_e_stat_tables(
         str: The response text from the E-Stat API.
     """
     url = (
-        f"{E_STAT_API_BASE_URL}getStatsList?appId={E_STAT_APP_ID}"
+        f"{E_STAT_API_BASE_URL}getSimpleStatsList?appId={E_STAT_APP_ID}"
         f"&searchWord={search_word}&limit={limit}"
         f"&surveyYears={surveyYears}&startPosition={startPosition}"
     )
@@ -107,7 +107,7 @@ async def get_e_stat_meta_info(
         str: The response text from the E-Stat API.
     """
     url = (
-        f"{E_STAT_API_BASE_URL}getMetaInfo?appId={E_STAT_APP_ID}"
+        f"{E_STAT_API_BASE_URL}getSimpleMetaInfo?appId={E_STAT_APP_ID}"
         f"&statsDataId={stats_data_id}"
     )
     return await make_e_stat_request(url)
@@ -175,7 +175,7 @@ async def get_e_stat_ref_dataset(
         str: The response text from the E-Stat API.
     """
     url = (
-        f"{E_STAT_API_BASE_URL}refDataset?appId={E_STAT_APP_ID}"
+        f"{E_STAT_API_BASE_URL}json/refDataset?appId={E_STAT_APP_ID}"
     )
     return await make_e_stat_request(url)
 
@@ -221,7 +221,7 @@ async def get_e_stat_data_catalog(
         str: The response text from the E-Stat API.
     """
     url = (
-        f"{E_STAT_API_BASE_URL}getDataCatalog?appId={E_STAT_APP_ID}"
+        f"{E_STAT_API_BASE_URL}json/getDataCatalog?appId={E_STAT_APP_ID}"
         f"&searchWord={search_word}&surveyYears={surveyYears}"
         f"&startPosition={startPosition}&limit={limit}"
     )
